@@ -1,0 +1,23 @@
+     ESTIMATE of time to complete assignment: 16 hours
+(sorry in the last log I made a mistake with the date and the time.)
+           Time     Time
+     Date  Started  Spent Work completed
+     ----  -------  ----  --------------
+     1/28  08:00am  2:00  Read assignment and set up structure + input for code
+     1/28  14:00pm  2:00  Did FIRST (edited 1/31, I thought next was first) algorithm, debugged it. Works now.
+     1/31  09:00am  0:30  Did best algorithm, working.
+     1/31  14:00pm  0:30  Did sort function, and bfd ffd algorithms, working
+     2/1   08:00    2:00  Did next function and optm function. Haven't tested yet
+     2/1   22:00pm  4:00 Debugging opt function
+     2/2   0900     0:45  Still Debugging opt function. Not sure if implementation is correct...
+     2/2   11:00    2:00 Got opt function to work. Debugged next function
+     2/2   13:00    2:00 Passed all public tests.
+           ----
+                    16:00  TOTAL time spent
+
+
+     *A brief discussion of the major difficulties encountered*
+
+-None so far. Haven't started on the algorithm (1/30, 0800)
+-1/31: Hardest part so far is setting up the command line flags. Haven't started on the optimal fit algorithm yet so I think that is going to be the hardest part
+-2/2: The opt function is quite hard to do. Don't know if I got it right tbh. Even now it's still hard to visualize the different levels of abstraction happening.
