@@ -124,7 +124,7 @@ int bestFit(int items[], int maxbin, bool trace) {
 		minbin = -1;
 		mincap = 101;
 		for (int j = 0; j<maxbin; j++) {
-			if ((items[i] <= cap[j]) && (cap[j] < mincap)) {minbin = j; mincap = cap[j];}
+			if ((items[i] <= cap[j]) && (cap[j] < mincap)) {minbin = j; mincap = cap[j]; if ((cap[j]-items[i]) == 0) {break;}}
 		}
 		//This means minbin didn't change- no bin can accomodate
 		if (minbin == -1) {bins++; cap[bins-1] = 100-items[i]; if(trace) {traceF(i,items[i],bins-1,cap[bins-1]);}}
@@ -234,7 +234,7 @@ int bp (…) {
 */
 int main(int argc, char **argv) {
 
-	if (argc == 1) {printf("usage: Pack [sizes]* [-next | -first | -best | -ffd | -bfd | -optm]+ -trace* \n"); return 0;}
+	if (argc == 1) {fprintf(stderr,"usage: Pack [sizes]* [-next | -first | -best | -ffd | -bfd | -optm]+ -trace*\n"); return 0;}
 
 	int items[argc-1];
 	//memset(items,'\0',argc-1);
@@ -247,16 +247,19 @@ int main(int argc, char **argv) {
 	bool bfd = false;
 	bool optm = false;
 	bool trace = false;
- 
+	
+        int count = 0;
+	char* alg[argc];	
 	for (int i  = 0; i<argc; i++) {
-		if (strcmp(argv[i], "-next")==0) {next = true;}
-		else if (strcmp(argv[i], "-first")==0) {first = true;}
-		else if (strcmp(argv[i], "-best")==0) {best = true;}
-		else if (strcmp(argv[i], "-ffd")==0) {ffd = true;}
-		else if (strcmp(argv[i], "-bfd")==0) {bfd = true;}
-		else if (strcmp(argv[i], "-optm")==0) {optm = true;}
+		if (strcmp(argv[i], "-next")==0) {next = true; alg[count] = "next"; count++;}
+		else if (strcmp(argv[i], "-first")==0) {first = true; alg[count] = "first"; count++;}
+		else if (strcmp(argv[i], "-best")==0) {best = true; alg[count] = "best"; count++;}
+		else if (strcmp(argv[i], "-ffd")==0) {ffd = true; alg[count] = "ffd"; count++;}
+		else if (strcmp(argv[i], "-bfd")==0) {bfd = true; alg[count] = "bfd"; count++;}
+		else if (strcmp(argv[i], "-optm")==0) {optm = true; alg[count] = "optm"; count++;}
 		else if (strcmp(argv[i], "-trace")==0) {trace = true;}
 	}
+	alg[count] = '\0';
 
 	if (!next && !first && !best && !ffd && !bfd && !optm) {fprintf(stderr, "Fatal error: no algorithm specified.\n"); return -1;}
 	
@@ -289,14 +292,15 @@ int main(int argc, char **argv) {
 		}
 		optmb = optFit(sorteditems,cap,nitems,nitems,trace,0); 
 	}
-
-	if (next) {printf("-next: %d\n", nextb);}
-	if (bfd) {printf("-bfd: %d\n", bfdb);}
-	if (best) {printf("-best: %d\n", bestb);}
-	if (ffd) {printf("-ffd: %d\n", ffdb);}
-	if (first) {printf("-first: %d\n", firstb);}
-	if (optm) {printf("-optm: %d\n", optmb);}
-
+	
+	for (int i = 0; alg[i] != '\0'; i++) {
+		if (!strcmp(alg[i],"next")) {printf("-next: %d\n", nextb);}
+		else if (!strcmp(alg[i],"bfd")) {printf("-bfd: %d\n", bfdb);}
+		else if (!strcmp(alg[i],"best")) {printf("-best: %d\n", bestb);}
+		else if (!strcmp(alg[i],"first")) {printf("-first: %d\n", firstb);}
+		else if (!strcmp(alg[i],"ffd")) {printf("-ffd: %d\n", ffdb);}
+		else if (!strcmp(alg[i],"optm")) {printf("-optm: %d\n", optmb);}
+	}
 
 
 
