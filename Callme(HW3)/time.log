@@ -1,0 +1,22 @@
+     ESTIMATE of time to complete assignment: 16 hours
+
+           Time     Time
+     Date  Started  Spent Work completed
+     ----  -------  ----  --------------
+     2/6  10:00am   1:00  Wrote all functions except for dispaly, expand, insert(linkedlist). (haven't tested them yet)
+     2/8  08:00am   3:00  Finished writing all functions. Tests works on hashtest
+     2/9  13:00pm   0:30  Test works on bighashtest
+     2/9  13:30pm   2:00  Started working on Callme.c. Set up the command line functions to get the item 			  that I want, and set the debug and file flags
+     2/11 10:50     0:30  alpha to numeric
+     2/13 08:00     2:00  Working on generating all the different combinations for numeric
+     2/13 20:00     2:30  Finished function on generating diff combinations (called genComb). Works. Also included all additional functions in the hash.h header file
+     2/14 13:00     1:30  Finished function that loads dictionary. Works.
+     2/15 16:00	    2:00  Debugging  with valgrind. Pass valgrind
+     2/15 19:30     1:00  Passed all public tests.
+     2/17 14:50     0:20  Stored the alpha to num output as an array instead of along
+                    ----
+                    16:00  TOTAL time spent
+
+     *A brief discussion of the major difficulties encountered*
+	-VALGRIND IS A GAME CHANGER. I spent 4 hours debugging an undefined int. 
+	-Pointers and freeing pointers is by far the most challenging part of the assignment.
