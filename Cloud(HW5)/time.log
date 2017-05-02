@@ -1,0 +1,15 @@
+     ESTIMATE of time to complete assignment: 11 hours
+
+           Time     Time
+     Date  Started  Spent Work completed
+     ----  -------  ----  --------------
+     3/14  20:15pm  2:00  Read assignment and started on btree
+     3/16  12:00pm  3:00  Finished btree, started on Cloud. Finished initial receiving of data
+     3/17  14:30pm  2:00  Finished accepting input, and setting up linked list if threshold is exceeded
+     4/2   22:00    1:30  Finished AVLtrees testing (I skipped rank/unrank/delete/deletemin), and integrated it into makefile
+     4/4   21:30    2:30  Put it all together in Cloud.c, pass all public tests
+                    ----
+                    11  TOTAL time spent
+
+     *A brief discussion of the major difficulties encountered*
+-None, really. Valgrind was difficult at times. Having Aspnes' code as a guide really helped.

@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
+#include "btree.h"
+
+void treeAdd(struct node * tree, char * key){
+  struct node * oldnode;
+
+  printf("Adding %s\n", key);
+  oldnode = treeSearch(tree, key);
+  if (oldnode) {
+    oldnode->count++;
+  } else {
+    treeInsert(tree, key);
+  }
+}
+
+
+int main(int argc, char **argv){
+
+  printf("Welcome to btree!\n");
+
+  struct node * root = makeNode("**root**");
+
+  treeAdd(root, "a");
+  printf("Tree height: %d Size: %d\n", treeHeight(root), treeSize(root));
+  treeAdd(root, "b");
+  printf("Tree height: %d Size: %d\n", treeHeight(root), treeSize(root));
+  treeAdd(root, "z");
+  printf("Tree height: %d Size: %d\n", treeHeight(root), treeSize(root));
+  treeAdd(root, "d");
+  printf("Tree height: %d Size: %d\n", treeHeight(root), treeSize(root));
+  
+  treeAdd(root, "d");
+  treeAdd(root, "b");
+  treeAdd(root, "b");
+  treeAdd(root, "b");
+
+
+  printf("Tree height: %d Size: %d\n", treeHeight(root), treeSize(root));
+  printTreePre(root);
+  printf("\n");
+  printTreeIn(root);
+  printf("\n");
+  printTreePost(root);
+  printf("\n");
+
+  treeDestroy(root);
+
+}
