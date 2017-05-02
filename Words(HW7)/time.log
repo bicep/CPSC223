@@ -1,0 +1,14 @@
+     ESTIMATE of time to complete assignment: 7 hours
+
+           Time     Time
+     Date  Started  Spent Work completed
+     ----  -------  ----  --------------
+     4/15  11:00    3:00  Did basic dynamic programming. Works
+     4/15  7:00PM   2:00  Insert dictionary
+     4/29  11:00PM  1:00  Pass all tests
+                    ----
+                    7:00  TOTAL time spent
+
+          *A brief discussion of the major difficulties encountered*
+-Understanding the DP algorithm took some time, but other than that it worked out fine.
+	  *Also, two spaces after??
