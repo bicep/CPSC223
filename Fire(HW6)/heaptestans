@@ -1,0 +1,8 @@
+INSERT: 4, R4, 16 HEAP: [1: R4 4/16] 
+INSERT: 5, R5, 25 HEAP: [1: R4 4/16] [2: R5 5/25] 
+INSERT: 6, R6, 36 HEAP: [1: R4 4/16] [2: R5 5/25] [3: R6 6/36] 
+DestroyHeap
+Freeing: -2147483648
+Freeing: 4
+Freeing: 5
+Freeing: 6

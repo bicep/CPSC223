@@ -1,0 +1,18 @@
+     ESTIMATE of time to complete assignment:  13 hours
+
+           Time     Time
+     Date  Started  Spent Work completed
+     ----  -------  ----  --------------
+     4/8  9:00pm    3:00  Finished heap.c and gives good output (I think)
+     4/9   9:30am   2:30  Finished writing code that accepts input, adds the rooms to the dictionary
+     4/10   9:30pm  11:30 Wrote preliminary code for depth first
+     4/11  8:30pm   10:31  Added code for breadth and best and connected. Some prelim code for directed
+     4/11  10:31pm  11:13 Added prelimnary code for connected and directed
+     5/11  1:00pm   2:00  Fixed bugs and passed all public tests
+
+                    ----
+                    13  TOTAL time spent
+
+          *A brief discussion of the major difficulties encountered*
+
+-Freeing was annoying because I kept double freeing the room struct
