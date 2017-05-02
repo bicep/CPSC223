@@ -1,0 +1,67 @@
+/*
+ stacktest.c
+
+ demonstrate stack functions
+*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include "/c/cs223/hw4/stack.h"
+
+
+/*
+struct token {
+  char * str;
+  int type;
+  double value;
+};
+
+typedef struct token *Token;
+*/
+
+void * mymalloc(size_t s){
+  void * ptr = malloc(s);
+  //printf("Mymalloc: %p\n", ptr);
+  return ptr;
+}
+
+
+int main(int argc, char **argv){
+
+  debugflag = true;
+  if (argc == 1) {
+    fprintf(stderr, "Usage: stacktest numbers+\n");
+    exit(1);
+  }
+
+  Token tok;
+
+  int stacksize = 10;
+  stackT st;
+  StackInit(&st, stacksize);
+  int val;
+  
+  for (int i=1; i < argc; i++) {
+    tok = mymalloc(sizeof(struct token));
+    tok->type = NUM;
+    tok->str = strdup(argv[i]);
+    val = strtod(tok->str, NULL);
+    tok->value = val;
+    StackPush(&st, tok);
+  }
+
+  StackPrint(&st);
+
+  tok = StackTop(&st);
+  StackPop(&st);
+  free(tok->str);
+  free(tok);
+
+  StackPrint(&st);
+
+  StackDestroy(&st);
+  
+  return(0);
+}

@@ -1,0 +1,19 @@
+     ESTIMATE of time to complete assignment: 16.5 hours
+
+           Time     Time
+     Date  Started  Spent Work completed
+     ----  -------  ----  --------------
+     3/11  12:15pm  2:00  Finished stack implementation. Runs with stacktest well and no valgrind problems.
+     3/11  20:00pm  2:00  FInished accepting input
+     3/11  22:30pm  1:00  Input is now converted to tokens in stack
+     3/12  15:30pm  4:00  Successfully implemented the shunting yard algorithm
+     3/13  11:30am  2:00  evaluating RPN, solving valgrind
+     3/13  13:30pm  2:00  solving valgrind, also adding float capability
+     3/13  17:00pm  0:30  Solved valgrind, decided not to use sprintf
+     3/13  18:00pm  3:00  Realized I had to use sprintf. Troubleshooting valgrind errors
+                    ----
+                     16:30 TOTAL time spent
+
+     *A brief discussion of the major difficulties encountered*
+-VALGRIND is so painful beacause there are so many data structures to keep track of this time.
+-Kept getting errors with sprintf
